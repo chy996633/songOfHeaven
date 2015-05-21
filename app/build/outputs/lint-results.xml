@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 24.1.2">
+
+    <issue
+        id="GradleCompatible"
+        severity="Error"
+        message="This support library should not use a lower version (18) than the `targetSdkVersion` (19)"
+        category="Correctness"
+        priority="8"
+        summary="Incompatible Gradle Versions"
+        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`.)"
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="22"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleCompatible"
+        severity="Error"
+        message="This support library should not use a lower version (18) than the `targetSdkVersion` (19)"
+        category="Correctness"
+        priority="8"
+        summary="Incompatible Gradle Versions"
+        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`.)"
+        errorLine1="    compile &apos;com.android.support:support-v4:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="23"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleCompatible"
+        severity="Error"
+        message="This support library should not use a lower version (18) than the `targetSdkVersion` (19)"
+        category="Correctness"
+        priority="8"
+        summary="Incompatible Gradle Versions"
+        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`.)"
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="24"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="AppCompatMethod"
+        severity="Warning"
+        message="Should use `getSupportActionBar` instead of `getActionBar` name"
+        category="Correctness"
+        priority="6"
+        summary="Using Wrong AppCompat Method"
+        explanation="When using the appcompat library, there are some methods you should be calling instead of the normal ones; for example, `getSupportActionBar()` instead of `getActionBar()`. This lint check looks for calls to the wrong method."
+        url="http://developer.android.com/tools/support-library/index.html"
+        urls="http://developer.android.com/tools/support-library/index.html"
+        errorLine1="  actionBar = getActionBar();"
+        errorLine2="              ~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\MainActivity.java"
+            line="39"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="AppCompatMethod"
+        severity="Warning"
+        message="Should use `getSupportActionBar` instead of `getActionBar` name"
+        category="Correctness"
+        priority="6"
+        summary="Using Wrong AppCompat Method"
+        explanation="When using the appcompat library, there are some methods you should be calling instead of the normal ones; for example, `getSupportActionBar()` instead of `getActionBar()`. This lint check looks for calls to the wrong method."
+        url="http://developer.android.com/tools/support-library/index.html"
+        urls="http://developer.android.com/tools/support-library/index.html"
+        errorLine1="  actionBar = getActionBar();"
+        errorLine2="              ~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\SearchActivity.java"
+            line="42"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.
+
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="    str = str.toLowerCase();"
+        errorLine2="              ~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\SearchActivity.java"
+            line="85"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        android:targetSdkVersion=&quot;19&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\AndroidManifest.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 19"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="10"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SdCardPath"
+        severity="Warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
+        category="Correctness"
+        priority="6"
+        summary="Hardcoded reference to `/sdcard`"
+        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
+
+Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
+        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        errorLine1="   String fname = &quot;/sdcard/&quot; + sdf.format(new Date()) + &quot;.png&quot;;"
+        errorLine2="                  ~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\MainActivity.java"
+            line="100"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="SdCardPath"
+        severity="Warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
+        category="Correctness"
+        priority="6"
+        summary="Hardcoded reference to `/sdcard`"
+        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
+
+Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
+        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        errorLine1="   String fname = &quot;/sdcard/&quot; + sdf.format(new Date()) + &quot;.png&quot;;"
+        errorLine2="                  ~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\SearchActivity.java"
+            line="120"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="The targetSdkVersion (19) should not be higher than the compileSdkVersion (16)"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compileSdkVersion 16"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="4"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:appcompat-v7 than 18.0.0 is available: 22.1.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="22"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="Using the appcompat library when minSdkVersion >= 14 and compileSdkVersion &lt; 21 is not necessary"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="22"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:support-v4 than 18.0.0 is available: 22.1.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:support-v4:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="23"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:appcompat-v7 than 18.0.0 is available: 22.1.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="24"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="Using the appcompat library when minSdkVersion >= 14 and compileSdkVersion &lt; 21 is not necessary"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\build.gradle"
+            line="24"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleOverrides"
+        severity="Warning"
+        message="This `minSdkVersion` value (`14`) is not used; it is always overridden by the value specified in the Gradle build script (`14`)"
+        category="Correctness"
+        priority="4"
+        summary="Value overridden by Gradle build script"
+        explanation="The value of (for example) `minSdkVersion` is only used if it is not specified in the `build.gradle` build scripts. When specified in the Gradle build scripts, the manifest value is ignored and can be misleading, so should be removed to avoid ambiguity."
+        errorLine1="        android:minSdkVersion=&quot;14&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\AndroidManifest.xml"
+            line="8"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleOverrides"
+        severity="Warning"
+        message="This `targetSdkVersion` value (`19`) is not used; it is always overridden by the value specified in the Gradle build script (`19`)"
+        category="Correctness"
+        priority="4"
+        summary="Value overridden by Gradle build script"
+        explanation="The value of (for example) `minSdkVersion` is only used if it is not specified in the `build.gradle` build scripts. When specified in the Gradle build scripts, the manifest value is ignored and can be misleading, so should be removed to avoid ambiguity."
+        errorLine1="        android:targetSdkVersion=&quot;19&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\AndroidManifest.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.activity_horizontal_margin` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;activity_horizontal_margin&quot;>16dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\dimens.xml"
+            line="4"
+            column="12"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values-w820dp\dimens.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.activity_vertical_margin` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;activity_vertical_margin&quot;>16dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\dimens.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_launcher` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-hdpi\ic_launcher.png"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-mdpi\ic_launcher.png"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-xhdpi\ic_launcher.png"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-xxhdpi\ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.bundle_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;bundle_title&quot;>title&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.bundle_content` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;bundle_content&quot;>content&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="8"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.action_menu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;action_menu&quot;>Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="9"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.title_activity_title2` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;title_activity_title2&quot;>Title2Activity&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="14"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.action_settings` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;action_settings&quot;>Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="15"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-hdpi`: ic_feeback.png, ic_screenshot.png, icon.png"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-hdpi"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-xhdpi`: ic_feeback.png, ic_screenshot.png, icon.png"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-xhdpi"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-xxhdpi`: ic_feeback.png, ic_screenshot.png, icon.png"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\drawable-xxhdpi"/>
+    </issue>
+
+    <issue
+        id="IconMissingDensityFolder"
+        severity="Warning"
+        message="Missing density variation folders in `src\main\res`: drawable-xxxhdpi"
+        category="Usability:Icons"
+        priority="3"
+        summary="Missing density folder"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra-high, extra-extra-high). This lint check identifies folders which are missing, such as `drawable-hdpi`.
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="     &lt;item"
+        errorLine2="     ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"
+            line="6"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="    &lt;item"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1=" &lt;item"
+        errorLine2=" ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="6"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="    &lt;item"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="    &lt;item"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="18"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="     &lt;item"
+        errorLine2="     ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\searchmenu.xml"
+            line="6"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="    &lt;item"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\searchmenu.xml"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="     &lt;item"
+        errorLine2="     ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\titlemenu.xml"
+            line="6"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="MenuTitle"
+        severity="Error"
+        message="Menu items should specify a `title`"
+        category="Usability"
+        priority="5"
+        summary="Missing menu title"
+        explanation="From the action bar documentation:
+&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
+
+* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
+* Screen readers for sight-impaired users read the menu item&apos;s title.
+* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
+The android:icon is always optional, but recommended."
+        url="http://developer.android.com/guide/topics/ui/actionbar.html"
+        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
+        errorLine1="    &lt;item"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\titlemenu.xml"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="AlwaysShowAction"
+        severity="Warning"
+        message="Prefer &quot;`ifRoom`&quot; instead of &quot;`always`&quot;"
+        category="Usability"
+        priority="3"
+        summary="Usage of `showAsAction=always`"
+        explanation="Using `showAsAction=&quot;always&quot;` in menu XML, or `MenuItem.SHOW_AS_ACTION_ALWAYS` in Java code is usually a deviation from the user interface style guide.Use `ifRoom` or the corresponding `MenuItem.SHOW_AS_ACTION_IF_ROOM` instead.
+
+If `always` is used sparingly there are usually no problems and behavior is roughly equivalent to `ifRoom` but with preference over other `ifRoom` items. Using it more than twice in the same menu is a bad idea.
+
+This check looks for menu XML files that contain more than two `always` actions, or some `always` actions and no `ifRoom` actions. In Java code, it looks for projects that contain references to `MenuItem.SHOW_AS_ACTION_ALWAYS` and no references to `MenuItem.SHOW_AS_ACTION_IF_ROOM`."
+        url="http://developer.android.com/design/patterns/actionbar.html"
+        urls="http://developer.android.com/design/patterns/actionbar.html"
+        errorLine1="        app:showAsAction=&quot;always&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"
+            line="10"
+            column="9"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="AlwaysShowAction"
+        severity="Warning"
+        message="Prefer &quot;`ifRoom`&quot; instead of &quot;`always`&quot;"
+        category="Usability"
+        priority="3"
+        summary="Usage of `showAsAction=always`"
+        explanation="Using `showAsAction=&quot;always&quot;` in menu XML, or `MenuItem.SHOW_AS_ACTION_ALWAYS` in Java code is usually a deviation from the user interface style guide.Use `ifRoom` or the corresponding `MenuItem.SHOW_AS_ACTION_IF_ROOM` instead.
+
+If `always` is used sparingly there are usually no problems and behavior is roughly equivalent to `ifRoom` but with preference over other `ifRoom` items. Using it more than twice in the same menu is a bad idea.
+
+This check looks for menu XML files that contain more than two `always` actions, or some `always` actions and no `ifRoom` actions. In Java code, it looks for projects that contain references to `MenuItem.SHOW_AS_ACTION_ALWAYS` and no references to `MenuItem.SHOW_AS_ACTION_IF_ROOM`."
+        url="http://developer.android.com/design/patterns/actionbar.html"
+        urls="http://developer.android.com/design/patterns/actionbar.html"
+        errorLine1="        app:showAsAction=&quot;always&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="10"
+            column="9"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="16"
+            column="9"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
+            line="22"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="AlwaysShowAction"
+        severity="Warning"
+        message="Prefer &quot;`ifRoom`&quot; instead of &quot;`always`&quot;"
+        category="Usability"
+        priority="3"
+        summary="Usage of `showAsAction=always`"
+        explanation="Using `showAsAction=&quot;always&quot;` in menu XML, or `MenuItem.SHOW_AS_ACTION_ALWAYS` in Java code is usually a deviation from the user interface style guide.Use `ifRoom` or the corresponding `MenuItem.SHOW_AS_ACTION_IF_ROOM` instead.
+
+If `always` is used sparingly there are usually no problems and behavior is roughly equivalent to `ifRoom` but with preference over other `ifRoom` items. Using it more than twice in the same menu is a bad idea.
+
+This check looks for menu XML files that contain more than two `always` actions, or some `always` actions and no `ifRoom` actions. In Java code, it looks for projects that contain references to `MenuItem.SHOW_AS_ACTION_ALWAYS` and no references to `MenuItem.SHOW_AS_ACTION_IF_ROOM`."
+        url="http://developer.android.com/design/patterns/actionbar.html"
+        urls="http://developer.android.com/design/patterns/actionbar.html"
+        errorLine1="        app:showAsAction=&quot;always&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\searchmenu.xml"
+            line="10"
+            column="9"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\searchmenu.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="AlwaysShowAction"
+        severity="Warning"
+        message="Prefer &quot;`ifRoom`&quot; instead of &quot;`always`&quot;"
+        category="Usability"
+        priority="3"
+        summary="Usage of `showAsAction=always`"
+        explanation="Using `showAsAction=&quot;always&quot;` in menu XML, or `MenuItem.SHOW_AS_ACTION_ALWAYS` in Java code is usually a deviation from the user interface style guide.Use `ifRoom` or the corresponding `MenuItem.SHOW_AS_ACTION_IF_ROOM` instead.
+
+If `always` is used sparingly there are usually no problems and behavior is roughly equivalent to `ifRoom` but with preference over other `ifRoom` items. Using it more than twice in the same menu is a bad idea.
+
+This check looks for menu XML files that contain more than two `always` actions, or some `always` actions and no `ifRoom` actions. In Java code, it looks for projects that contain references to `MenuItem.SHOW_AS_ACTION_ALWAYS` and no references to `MenuItem.SHOW_AS_ACTION_IF_ROOM`."
+        url="http://developer.android.com/design/patterns/actionbar.html"
+        urls="http://developer.android.com/design/patterns/actionbar.html"
+        errorLine1="        app:showAsAction=&quot;always&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\titlemenu.xml"
+            line="10"
+            column="9"/>
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\titlemenu.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="        &lt;ImageButton "
+        errorLine2="        ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\layout\activity_search.xml"
+            line="26"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;输入歌曲序号&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:
+
+* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)
+
+* The application cannot be translated to other languages by just adding new translations for existing string resources.
+
+In Android Studio and Eclipse there are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:hint=&quot;输入歌曲序号&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="adt">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\layout\activity_search.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+</issues>

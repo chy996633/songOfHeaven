@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.activity.SearchActivity"
+    >
+
+    <LinearLayout 
+        android:id="@+id/search"
+         android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:hint="输入歌曲序号"
+            android:inputType="phone" />
+
+        <ImageButton 
+            android:id="@+id/clear"
+            android:layout_weight="0"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/abc_ic_clear_normal"
+            android:onClick="clear"/>
+        
+    </LinearLayout>
+    
+	<ListView 
+	    android:id="@+id/result"
+	    android:layout_height="match_parent"
+	    android:layout_width="match_parent">
+	    
+	</ListView>
+    
+
+
+
+</LinearLayout>
+
