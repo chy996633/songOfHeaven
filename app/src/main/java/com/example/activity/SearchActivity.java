@@ -45,13 +45,15 @@ public class SearchActivity extends ActionBarActivity {
 		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		ListView searchList = (ListView) findViewById(R.id.result);
+        final TreeMap<String, String> titleToContentMap = Utills.getTitleToContentMap(MainActivity.sourceStrArray, this);
 		final SearchAdapter searchAdapter = new SearchAdapter();
 
 		ArrayList<String> allTitles = getIntent().getStringArrayListExtra(
 				"allTitles");
 		searchAdapter.setAllTitles(allTitles);
+        searchAdapter.setTitleToContentMap(titleToContentMap);
 		searchList.setAdapter(searchAdapter);
-		final TreeMap<String, String> titleToContentMap = Utills.getTitleToContentMap(MainActivity.sourceStrArray, this);
+
 		
 		searchList.setOnItemClickListener(new OnItemClickListener() {
 			

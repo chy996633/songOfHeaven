@@ -20,8 +20,8 @@
             android:layout_height="56dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:hint="输入歌曲序号"
-            android:inputType="phone" />
+            android:hint="请输入歌曲序号、歌词或标题"
+            android:inputType="text" />
 
         <ImageButton 
             android:id="@+id/clear"
