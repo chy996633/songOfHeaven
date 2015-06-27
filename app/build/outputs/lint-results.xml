@@ -13,39 +13,7 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="E:\SongOfHeaven\app\build.gradle"
-            line="22"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="GradleCompatible"
-        severity="Error"
-        message="This support library should not use a lower version (18) than the `targetSdkVersion` (19)"
-        category="Correctness"
-        priority="8"
-        summary="Incompatible Gradle Versions"
-        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`.)"
-        errorLine1="    compile &apos;com.android.support:support-v4:18.0.0&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="E:\SongOfHeaven\app\build.gradle"
-            line="23"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="GradleCompatible"
-        severity="Error"
-        message="This support library should not use a lower version (18) than the `targetSdkVersion` (19)"
-        category="Correctness"
-        priority="8"
-        summary="Incompatible Gradle Versions"
-        explanation="There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your `targetSdkVersion`.)"
-        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="E:\SongOfHeaven\app\build.gradle"
-            line="24"
+            line="26"
             column="5"/>
     </issue>
 
@@ -103,7 +71,7 @@ If you want the methods to just perform ASCII replacement, for example to conver
         errorLine2="              ~~~~~~~~~~~">
         <location
             file="E:\SongOfHeaven\app\src\main\java\com\example\activity\SearchActivity.java"
-            line="85"
+            line="87"
             column="15"/>
     </issue>
 
@@ -150,46 +118,6 @@ To fix this issue, set the `targetSdkVersion` to the highest available value. Th
     </issue>
 
     <issue
-        id="SdCardPath"
-        severity="Warning"
-        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
-        category="Correctness"
-        priority="6"
-        summary="Hardcoded reference to `/sdcard`"
-        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
-
-Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
-        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
-        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
-        errorLine1="   String fname = &quot;/sdcard/&quot; + sdf.format(new Date()) + &quot;.png&quot;;"
-        errorLine2="                  ~~~~~~~~~~">
-        <location
-            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\MainActivity.java"
-            line="100"
-            column="19"/>
-    </issue>
-
-    <issue
-        id="SdCardPath"
-        severity="Warning"
-        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
-        category="Correctness"
-        priority="6"
-        summary="Hardcoded reference to `/sdcard`"
-        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
-
-Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
-        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
-        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
-        errorLine1="   String fname = &quot;/sdcard/&quot; + sdf.format(new Date()) + &quot;.png&quot;;"
-        errorLine2="                  ~~~~~~~~~~">
-        <location
-            file="E:\SongOfHeaven\app\src\main\java\com\example\activity\SearchActivity.java"
-            line="120"
-            column="19"/>
-    </issue>
-
-    <issue
         id="GradleDependency"
         severity="Warning"
         message="The targetSdkVersion (19) should not be higher than the compileSdkVersion (16)"
@@ -219,7 +147,7 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
         quickfix="studio">
         <location
             file="E:\SongOfHeaven\app\build.gradle"
-            line="22"
+            line="26"
             column="5"/>
     </issue>
 
@@ -236,58 +164,7 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
         quickfix="studio">
         <location
             file="E:\SongOfHeaven\app\build.gradle"
-            line="22"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of com.android.support:support-v4 than 18.0.0 is available: 22.1.1"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="    compile &apos;com.android.support:support-v4:18.0.0&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\build.gradle"
-            line="23"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of com.android.support:appcompat-v7 than 18.0.0 is available: 22.1.1"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\build.gradle"
-            line="24"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="Using the appcompat library when minSdkVersion >= 14 and compileSdkVersion &lt; 21 is not necessary"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="    compile &apos;com.android.support:appcompat-v7:18.0.0&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\build.gradle"
-            line="24"
+            line="26"
             column="5"/>
     </issue>
 
@@ -321,6 +198,18 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
             file="E:\SongOfHeaven\app\src\main\AndroidManifest.xml"
             line="9"
             column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.menu.contentmenu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"/>
     </issue>
 
     <issue
@@ -380,6 +269,18 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
     <issue
         id="UnusedResources"
         severity="Warning"
+        message="The resource `R.menu.searchmenu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\searchmenu.xml"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
         message="The resource `R.string.bundle_title` appears to be unused"
         category="Performance"
         priority="3"
@@ -428,6 +329,22 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
     <issue
         id="UnusedResources"
         severity="Warning"
+        message="The resource `R.string.screenshot_fail` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;screenshot_fail&quot;>截屏失败&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
         message="The resource `R.string.title_activity_title2` appears to be unused"
         category="Performance"
         priority="3"
@@ -455,6 +372,34 @@ Similarly, do not reference the `/data/data/` path directly; it can vary in mult
             file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
             line="15"
             column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.screenshot_success` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;screenshot_success&quot;>截屏成功，文件存储位置：&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\values\strings.xml"
+            line="16"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.menu.titlemenu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\SongOfHeaven\app\src\main\res\menu\titlemenu.xml"/>
     </issue>
 
     <issue
@@ -611,56 +556,6 @@ The android:icon is always optional, but recommended."
 The android:icon is always optional, but recommended."
         url="http://developer.android.com/guide/topics/ui/actionbar.html"
         urls="http://developer.android.com/guide/topics/ui/actionbar.html"
-        errorLine1="    &lt;item"
-        errorLine2="    ^"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
-            line="12"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="MenuTitle"
-        severity="Error"
-        message="Menu items should specify a `title`"
-        category="Usability"
-        priority="5"
-        summary="Missing menu title"
-        explanation="From the action bar documentation:
-&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
-
-* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
-* Screen readers for sight-impaired users read the menu item&apos;s title.
-* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
-The android:icon is always optional, but recommended."
-        url="http://developer.android.com/guide/topics/ui/actionbar.html"
-        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
-        errorLine1="    &lt;item"
-        errorLine2="    ^"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
-            line="18"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="MenuTitle"
-        severity="Error"
-        message="Menu items should specify a `title`"
-        category="Usability"
-        priority="5"
-        summary="Missing menu title"
-        explanation="From the action bar documentation:
-&quot;It&apos;s important that you always define android:title for each menu item — even if you don&apos;t declare that the title appear with the action item — for three reasons:
-
-* If there&apos;s not enough room in the action bar for the action item, the menu item appears in the overflow menu and only the title appears.
-* Screen readers for sight-impaired users read the menu item&apos;s title.
-* If the action item appears with only the icon, a user can long-press the item to reveal a tool-tip that displays the action item&apos;s title.
-The android:icon is always optional, but recommended."
-        url="http://developer.android.com/guide/topics/ui/actionbar.html"
-        urls="http://developer.android.com/guide/topics/ui/actionbar.html"
         errorLine1="     &lt;item"
         errorLine2="     ^"
         quickfix="studio">
@@ -769,37 +664,6 @@ This check looks for menu XML files that contain more than two `always` actions,
         <location
             file="E:\SongOfHeaven\app\src\main\res\menu\contentmenu.xml"
             line="16"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="AlwaysShowAction"
-        severity="Warning"
-        message="Prefer &quot;`ifRoom`&quot; instead of &quot;`always`&quot;"
-        category="Usability"
-        priority="3"
-        summary="Usage of `showAsAction=always`"
-        explanation="Using `showAsAction=&quot;always&quot;` in menu XML, or `MenuItem.SHOW_AS_ACTION_ALWAYS` in Java code is usually a deviation from the user interface style guide.Use `ifRoom` or the corresponding `MenuItem.SHOW_AS_ACTION_IF_ROOM` instead.
-
-If `always` is used sparingly there are usually no problems and behavior is roughly equivalent to `ifRoom` but with preference over other `ifRoom` items. Using it more than twice in the same menu is a bad idea.
-
-This check looks for menu XML files that contain more than two `always` actions, or some `always` actions and no `ifRoom` actions. In Java code, it looks for projects that contain references to `MenuItem.SHOW_AS_ACTION_ALWAYS` and no references to `MenuItem.SHOW_AS_ACTION_IF_ROOM`."
-        url="http://developer.android.com/design/patterns/actionbar.html"
-        urls="http://developer.android.com/design/patterns/actionbar.html"
-        errorLine1="        app:showAsAction=&quot;always&quot;/>"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
-            line="10"
-            column="9"/>
-        <location
-            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
-            line="16"
-            column="9"/>
-        <location
-            file="E:\SongOfHeaven\app\src\main\res\menu\main.xml"
-            line="22"
             column="9"/>
     </issue>
 
@@ -881,7 +745,7 @@ Note that for text fields, you should not set both the `hint` and the `contentDe
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="[I18N] Hardcoded string &quot;输入歌曲序号&quot;, should use `@string` resource"
+        message="[I18N] Hardcoded string &quot;请输入歌曲序号、歌词或标题&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
@@ -892,8 +756,8 @@ Note that for text fields, you should not set both the `hint` and the `contentDe
 * The application cannot be translated to other languages by just adding new translations for existing string resources.
 
 In Android Studio and Eclipse there are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:hint=&quot;输入歌曲序号&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~"
+        errorLine1="            android:hint=&quot;请输入歌曲序号、歌词或标题&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="adt">
         <location
             file="E:\SongOfHeaven\app\src\main\res\layout\activity_search.xml"

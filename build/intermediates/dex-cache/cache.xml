@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
-        jar="E:\chenhaiyue\android-sdk-windows\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jar="E:\SongOfHeaven\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="E:\SongOfHeaven\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-3834c932c298a8788ed2b5674d1e52b205afdf56.jar" />
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="E:\SongOfHeaven\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-1e620470039199843f089de710659caa25bb38b3.jar" />
+    </item>
+    <item
+        jar="E:\chenhaiyue\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="E:\SongOfHeaven\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-1c8aaddf6fa44b485e79c3ed8fe70c850f01094f.jar" />
+    </item>
+    <item
+        jar="E:\SongOfHeaven\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="E:\SongOfHeaven\app\build\intermediates\pre-dexed\debug\classes-9adb3a700bcb6a4b2ee2d71fbcb587db11f9cccf.jar" />
     </item>
     <item
         jar="E:\SongOfHeaven\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\classes.jar"

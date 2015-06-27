@@ -86,9 +86,7 @@ public class SearchAdapter extends BaseAdapter {
                 results.count = allTitles.size();
             } else {
                 ArrayList<String> mList = new ArrayList<String>();
-                Iterator<String> itr = titleToContentMap.keySet().iterator();
-                while (itr.hasNext()) {
-                    String next = itr.next();
+                for (String next : titleToContentMap.keySet()) {
                     //add both title and content that contains key words to mList
                     if (next.contains(keywords) || titleToContentMap.get(next).contains(keywords)) {
                         mList.add(next);
@@ -105,7 +103,7 @@ public class SearchAdapter extends BaseAdapter {
                                       FilterResults results) {
 
             selectedTitles = (ArrayList<String>) results.values;
-            System.out.println("selected:"+ selectedTitles.toString());
+            System.out.println("selected:" + selectedTitles.toString());
             notifyDataSetChanged();
         }
     }
